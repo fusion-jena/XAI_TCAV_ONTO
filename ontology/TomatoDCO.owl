@@ -1,0 +1,633 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO/"
+     xml:base="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Abnormality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Abnormality"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#BacterialSpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#BacterialSpot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoBacterialDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Black"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkBrown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightGreen"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#BacterialSpotsOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoBacterialDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#BacterialSpotsOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#BacterialSpotsOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Black -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Black">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Abnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#CurlOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#CurlOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkBrown -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkBrown">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkGreen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkGreen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Green"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#EarlyBlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#EarlyBlight">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Black"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#EarlyBlightSpotsOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#EarlyBlightSpotsOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#EarlyBlightSpotsOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Gray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Gray">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#GrayWhite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#GrayWhite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Gray"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Green -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Green">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LateBlight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LateBlight">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Black"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Gray"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#White"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LateBlightSpotsOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LateBlightSpotsOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LateBlightSpotsOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LeafMold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LeafMold">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkGreen"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightGreen"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#YellowishGreen"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MoldOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightBrown -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightBrown">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightGreen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightGreen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Green"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MiteDamageOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MiteDamageOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MoldOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MoldOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MosaicPatchesOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MosaicPatchesOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MosaicVirus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MosaicVirus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoViralDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkGreen"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#White"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MosaicPatchesOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoViralDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Purple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Purple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ReddishBrown -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ReddishBrown">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Brown"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SeptoriaLeafSpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SeptoriaLeafSpot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Black"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#GrayWhite"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SeptoriaSpotsOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SeptoriaSpotsOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SeptoriaSpotsOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Abnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Abnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TargetSpot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TargetSpot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#DarkBrown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#LightBrown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TargetSpotsOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TargetSpotsOnLeaf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TargetSpotsOnLeaf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#SymptomAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoBacterialDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoBacterialDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoFungalDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoInsectDamageDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoInsectDamageDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoViralDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoViralDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TwoSpottedSpiderMite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TwoSpottedSpiderMite">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoInsectDamageDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ReddishBrown"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#MiteDamageOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoInsectDamageDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#White -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#White">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ColorAbnormality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#YellowLeafCurlVirus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#YellowLeafCurlVirus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoViralDisease"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasColor"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Purple"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Yellow"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasShape"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#ShapeOfLeafAbnormality"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#hasSymptom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#CurlOnLeaf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#TomatoViralDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#YellowishGreen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#YellowishGreen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2023/10/TomatoDCO#Green"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
