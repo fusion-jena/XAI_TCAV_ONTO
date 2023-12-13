@@ -113,7 +113,7 @@ print('concepts to check', concepts)
 sess = utils.create_session()
 
 # GRAPH_PATH is where the trained model is stored.
-GRAPH_PATH = 'C:/Users/admin/Desktop/documentsgithub/source_dir/inceptionv3_model.h5'
+GRAPH_PATH = './source_dir/inceptionv3_model.h5'
 
 LABEL_PATH = source_dir + "/graph_label_strings.txt"
 
