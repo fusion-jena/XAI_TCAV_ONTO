@@ -8,12 +8,11 @@ def fetch_concepts_from_ontology(ontology_path, class_name):
 
     # Get the class from the ontology
     disease_class = getattr(onto, class_name)
+    #===========Colors==============
     # Extract color components
     color_components = disease_class.hasColor
     print(color_components)
-    # Create a new list without the "tomdco2" prefix and "or" separation
     color_list = []
-
     # Iterate through each color class or individual and add to the list
     for color_expression in color_components:
         if isinstance(color_expression, Or):
@@ -33,15 +32,12 @@ def fetch_concepts_from_ontology(ontology_path, class_name):
     #===========Symptom==============
     prop_symptom = onto.hasSymptom
     print("prop_symptom[onto[disease_class]]",prop_symptom[disease_class])
-    # retutrn [tomato_disease_onto.BlightonLeaf]
     concept_symptom = str(prop_symptom[disease_class]).split('.')[-1][:-1]
-    print("concept_symptom=",concept_symptom)
-
     #===========Shape==============
     prop_shape = onto.hasShape
     print("prop_shape[onto[disease_class]]",prop_shape[disease_class])
     concept_shape = str(prop_shape[disease_class]).split('.')[-1][:-1]
-    print("concept_symptom=",concept_shape)
+   
     ConceptsDictionary = {
     "hasShape": concept_shape,
     "hasColor": result_hasColor,
