@@ -23,11 +23,14 @@ You can find an example for a source_dir to use to reproduce results for the cla
 ### Models
   * Trained InceptionV3 model on Tomaoto dataset.
   * Class labels
-
+### Ontology
+The structure of TomatoDCO ontology is divided into three parts: (a) the class hierarchy of TomatoDCO; (b) the object properties of TomatoDCO; (c) the object properties descriptions (range and domain); and (d ) an example of axioms representing concepts of abnormalities of the tomato bacterial spot disease.
+A detailed description of these components is given in our paper.
+![ontology_structure](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/ontology/ontology_structure.png))
 ## Usage
 
   * The script [main.py](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/main.py) run the whole algorithm to generate concepts automatically from the ontology and compute     tcav scores for each generated concepts.
-  * Based on the target class label, the ontology [TomatoDCO.owl](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/ontology/TomatoDCO.owl) provides all important   properties linked to the specified disease class using the method  [*fetch_concepts_from_ontology(ontology_path, class_name)*](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/ontology/ontology_concepts.py) Where *Ontology_path* is the path to TomatoDCO.owl ontology and *Class_name* is the target class in test. For example, some of these properties (concepts) could be color, symptom and shape abnormalities. The generated concept labels (i.e., color brown) are then used to automatically generate corresponding images (i.e., different shades of brown images). 
+  * Based on the target class label, the ontology [TomatoDCO.owl](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/ontology/TomatoDCO.owl) provides all important   properties linked to the specified disease class using the method  [*fetch_concepts_from_ontology(ontology_path, class_name)*](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/ontology/ontology_concepts.py) Where *Ontology_path* is the path to TomatoDCO.owl ontology and *Class_name* is the target class in test. For example, some of these properties (concepts) could be color, symptom and shape abnormalities. The generated concept labels (i.e., color brown) are then used to automatically generate corresponding images (i.e., different shades of brown images).
   * To generate color concepts, the method (generate_color_concept(color, source_dir)) is used where *color* is the color to generate images for and *source_dir* is the directory where the generated color images will be saved.
   * To generate symptom concepts, the method [*generate_shape_concept(segmented_images_dir,shape_folder)*](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/generate_concepts/generate_shape.py) is used where *segmented_images_dir* is the directory where the segmented images of target class from test set are saved and *shape_folder* is the folder where the generated shape images will be saved.
   * To generate shape concepts, the method [*generate_symptom_concept(source_dir,segmented_images_dir, symptom)*](https://github.com/jihenAM/XAI_TCAV_ONTO/blob/main/generate_concepts/generate_symptom.py)is used Where *symptom* is the concept to be generated.
