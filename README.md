@@ -38,4 +38,4 @@ After running main.py, tcav scores for each generated concept from ontology will
 
 ## References
  * [1] Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (https://arxiv.org/abs/1711.11279; Kim, B. et al https://github.com/tensorflow/tcav/blob/master/README.md)
- * [2] [Using Deep Learning for Image-Based Plant Disease Detection](https://arxiv.org/ftp/arxiv/papers/1511/1511.08060.pdf). (Mohanty, P. et al, https://github.com/spMohanty/PlantVillage-Dataset)
+ * [2] [An open access repository of images on plant health to enable the development of mobile disease diagnostics](https://arxiv.org/ftp/arxiv/papers/1511/1511.08060.pdf). (Hughes, P. et al, https://github.com/spMohanty/PlantVillage-Dataset)
